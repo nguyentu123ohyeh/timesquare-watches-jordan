@@ -132,7 +132,14 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+
+        <link
+          rel="stylesheet"
+          href="/assets/styles-CZzv0B6J.css"
+        />
+
       </head>
+
       <body>
         {children}
         <Scripts />
