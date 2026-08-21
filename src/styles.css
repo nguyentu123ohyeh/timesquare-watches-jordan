@@ -157,3 +157,5 @@
 @utility fade-up {
   animation: ts-fade-up 0.7s ease both;
 }
+
+@source inline("flex grid block text-xl text-sm p-6 bg-background");
