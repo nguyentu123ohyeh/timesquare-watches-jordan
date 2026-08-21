@@ -67,10 +67,6 @@ export function Footer() {
                 info@timesquare-import.com
               </a>
             </li>
-            <li className="flex gap-3">
-              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.3} />
-              +962 XX XXX XXXX
-            </li>
           </ul>
         </div>
 

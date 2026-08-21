@@ -62,8 +62,6 @@ items.map(({product,qty})=>(
 
             <p className="mt-5 text-muted-foreground">
               Email: info@timesquare-import.com
-              <br />
-              Phone: +962 XX XXX XXXX
             </p>
           </div>
 
