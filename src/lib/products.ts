@@ -6,106 +6,215 @@ import efr526l from "@/assets/p-efr526l.jpg";
 import efv550p from "@/assets/p-efv550p.jpg";
 import mtp1384l from "@/assets/p-mtp1384l.jpg";
 
+import efv550pNew from "@/assets/EFV-550P-1AVUDF.png";
+import efv640dNew from "@/assets/EFV-640D-2AVUDF.png";
+import efv640lNew from "@/assets/EFV-640L-2AVUDF.png";
+import mtp1384New from "@/assets/MTP-1384L-1AVDF.png";
+import raSeries from "@/assets/RA-Series.png";
+import reSeries from "@/assets/RE-Series.png";
+import saSeries from "@/assets/SA-Series.png";
+import carbonSport from "@/assets/Carbon-Sport-Watch.png";
+import businessClassic from "@/assets/Business-Classic-Watch.png";
+import minimalLeather from "@/assets/Minimal-Leather-Watch.png";
+import premiumGift from "@/assets/Premium-Gift-Watch.png";
+import classicWomen from "@/assets/Classic-Women-Watch.png";
+import modernWomen from "@/assets/Modern-Women-Watch.png";
+import internationalGift from "@/assets/International-Gift-Watch.png";
+import sportChronograph from "@/assets/Sport-Chronograph.png";
+import luxurySteel from "@/assets/Luxury-Steel-Watch.png";
+import dailyQuartz from "@/assets/Daily-Quartz-Watch.png";
+import classicRound from "@/assets/Classic-Round-Watch.png";
+import modernDigital from "@/assets/Modern-Digital-Watch.png";
+import importCollection from "@/assets/Import-Collection-Watch.png";
+
+
 export type Product = {
+
   id: string;
+
   name: string;
+
   model: string;
+
   category: string;
+
   description: string;
+
   price: number;
+
   image: string;
+
+  origin: string;
+
+  specifications: string[];
+
   featured?: boolean;
+
 };
 
+
 export const CATEGORIES = [
+
   "Luxury Watches",
+
   "Casual Watches",
+
   "Gift Watches",
+
   "Men's Watches",
+
   "Women's Watches",
+
 ] as const;
 
-export const PRODUCTS: Product[] = [
-  {
-    id: "ga-2100-1a1dr",
-    name: "Octagon Carbon Core",
-    model: "GA-2100-1A1DR",
-    category: "Casual Watches",
-    description:
-      "Shock-resistant carbon core guard case with analog-digital display and 200m water resistance.",
-    price: 129,
-    image: ga2100_1a1,
-    featured: true,
-  },
-  {
-    id: "ga-2100-1adr",
-    name: "Octagon Sport Edition",
-    model: "GA-2100-1ADR",
-    category: "Men's Watches",
-    description:
-      "Slim octagonal bezel with bold accents, world time and stopwatch functions for daily wear.",
-    price: 119,
-    image: ga2100_1a,
-    featured: true,
-  },
-  {
-    id: "ecb-2200htr-1adr",
-    name: "Solar Connect Chronograph",
-    model: "ECB-2200HTR-1ADR",
-    category: "Luxury Watches",
-    description:
-      "Tough solar movement with smartphone link, stainless steel bracelet and technical multi-dial layout.",
-    price: 289,
-    image: ecb2200,
-    featured: true,
-  },
-  {
-    id: "efr-s108d-7avudf",
-    name: "Edifice Steel Classic",
-    model: "EFR-S108D-7AVUDF",
-    category: "Men's Watches",
-    description:
-      "Solar-powered chronograph with clean white dial and solid stainless steel bracelet.",
-    price: 199,
-    image: efrs108d,
-    featured: true,
-  },
-  {
-    id: "efr-526l-1avudf",
-    name: "Edifice Leather Chronograph",
-    model: "EFR-526L-1AVUDF",
-    category: "Luxury Watches",
-    description:
-      "Black dial chronograph with genuine leather strap and 1/20 second stopwatch precision.",
-    price: 179,
-    image: efr526l,
-  },
-  {
-    id: "efv-550p-1avudf",
-    name: "Minimal Dress Automatic",
-    model: "EFV-550P-1AVUDF",
-    category: "Gift Watches",
-    description:
-      "Refined slim case and pure black dial — an elegant everyday dress watch and ideal gift.",
-    price: 149,
-    image: efv550p,
-  },
-  {
-    id: "mtp-1384l-1avdf",
-    name: "Heritage Gold Slim",
-    model: "MTP-1384L-1AVDF",
-    category: "Women's Watches",
-    description:
-      "Gold-tone case with white dial and soft leather strap, designed for timeless elegance.",
-    price: 99,
-    image: mtp1384l,
-    featured: true,
-  },
+
+
+const imgs: string[] = [
+
+  // OLD 7 PRODUCTS
+  ga2100_1a1,
+  ga2100_1a,
+  ecb2200,
+  efrs108d,
+  efr526l,
+  efv550p,
+  mtp1384l,
+
+
+  // NEW PRODUCTS
+  efv550pNew,
+  efv640dNew,
+  efv640lNew,
+  mtp1384New,
+  raSeries,
+  reSeries,
+  saSeries,
+  carbonSport,
+  businessClassic,
+  minimalLeather,
+  premiumGift,
+  classicWomen,
+  modernWomen,
+  internationalGift,
+  sportChronograph,
+  luxurySteel,
+  dailyQuartz,
+  classicRound,
+  modernDigital,
+  importCollection,
+
 ];
 
-export const formatPrice = (value: number) =>
+
+
+const raw: [string, string, string, string][] = [
+
+  ["GA-2100-1A1DR", "G-Shock Carbon Core Guard", "Casual Watches", "Thailand"],
+
+  ["GA-2100-1ADR", "G-Shock Octagon Sport", "Men's Watches", "Thailand"],
+
+  ["ECB-2200HTR-1ADR", "Edifice Chronograph", "Luxury Watches", "China"],
+
+  ["ECB-950MP-1ADR", "Edifice Premium Chronograph", "Luxury Watches", "China"],
+
+  ["EFR-S108D-7AVUDF", "Edifice Steel Classic", "Men's Watches", "China"],
+
+  ["EFR-526L-1AVUDF", "Leather Chronograph", "Gift Watches", "China"],
+
+  ["EFR-526L-7AVUDF", "Silver Dial Watch", "Men's Watches", "China"],
+
+  ["EFV-550P-1AVUDF", "Edifice Sport", "Men's Watches", "China"],
+
+  ["EFV-640D-2AVUDF", "Stainless Watch", "Men's Watches", "China"],
+
+  ["EFV-640L-2AVUDF", "Leather Series", "Gift Watches", "China"],
+
+  ["MTP-1384L-1AVDF", "Classic Leather Dress Watch", "Luxury Watches", "China"],
+
+  ["RA Series", "Classic Gift Watch", "Gift Watches", "Japan"],
+
+  ["RE Series", "Elegant Gift Watch", "Gift Watches", "Japan"],
+
+  ["SA Series", "Daily Casual Watch", "Casual Watches", "Japan"],
+
+  ["Carbon Sport Watch", "Premium Casual Collection", "Casual Watches", "Thailand"],
+
+  ["Business Classic Watch", "Office Collection", "Men's Watches", "China"],
+
+  ["Minimal Leather Watch", "Leather Collection", "Gift Watches", "China"],
+
+  ["Premium Gift Watch", "Corporate Gift Watch", "Gift Watches", "Japan"],
+
+  ["Classic Women Watch", "Ladies Collection", "Women's Watches", "Japan"],
+
+  ["Modern Women Watch", "Elegant Ladies Style", "Women's Watches", "China"],
+
+  ["International Gift Watch", "Global Gift Collection", "Gift Watches", "China"],
+
+  ["Sport Chronograph", "Active Lifestyle Watch", "Men's Watches", "China"],
+
+  ["Luxury Steel Watch", "Premium Steel Collection", "Luxury Watches", "Japan"],
+
+  ["Daily Quartz Watch", "Everyday Collection", "Casual Watches", "China"],
+
+  ["Classic Round Watch", "Heritage Collection", "Luxury Watches", "Japan"],
+
+  ["Modern Digital Watch", "Digital Collection", "Casual Watches", "Thailand"],
+
+  ["Import Collection Watch", "International Trading Collection", "Gift Watches", "Jordan"],
+
+];
+
+
+
+export const PRODUCTS: Product[] = raw.map((x, i) => ({
+
+  id: x[0]
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-"),
+
+  name: x[1],
+
+  model: x[0],
+
+  category: x[2],
+
+  origin: x[3],
+
+
+  description:
+
+    "Premium personal gift watch from TIMES SQUARE Import & Export collection.",
+
+
+  price: 99 + (i % 9) * 20,
+
+
+  image: imgs[i],
+
+
+  specifications: [
+
+    "Quartz Movement",
+
+    "Premium Design",
+
+    "International Trading Product",
+
+  ],
+
+}));
+
+
+
+export const formatPrice = (v: number) =>
+
   new Intl.NumberFormat("en-US", {
+
     style: "currency",
+
     currency: "USD",
+
     minimumFractionDigits: 0,
-  }).format(value);
+
+  }).format(v);

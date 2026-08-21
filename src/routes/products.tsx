@@ -12,13 +12,13 @@ export const Route = createFileRoute("/products")({
       {
         name: "description",
         content:
-          "Browse luxury, casual, gift, men's and women's watches available for retail and wholesale order from our Amman head office.",
+          "Browse our international watch catalogue for wholesale and import-export cooperation. from our Amman head office.",
       },
       { property: "og:title", content: "Watch Collection | TIMES SQUARE" },
       {
         property: "og:description",
         content:
-          "Luxury, casual and gift watches available for retail and wholesale order.",
+          "International watch catalogue available for wholesale and import-export cooperation.",
       },
       { property: "og:url", content: "/products" },
     ],
@@ -49,7 +49,7 @@ function Products() {
       <PageHeader
         eyebrow="Collection"
         title="Our Watch Catalogue"
-        description="Every model is stocked through authorised channels. Retail prices shown; wholesale pricing available on request."
+        description="Explore our watch catalogue including G-Shock, Edifice and classic collections available for wholesale and international trading inquiries."
       />
 
       <section className="mx-auto max-w-7xl px-5 py-14">

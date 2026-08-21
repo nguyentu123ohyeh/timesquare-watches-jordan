@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Globe2, PackageCheck, ShieldCheck, Truck } from "lucide-react";
 import hero from "@/assets/hero-watch.jpg";
