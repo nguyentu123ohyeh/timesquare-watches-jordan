@@ -14,7 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "@/lib/cart";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { CookieConsent } from "@/components/site/CookieConsent";
+// import { CookieConsent } from "@/components/site/CookieConsent";
 
 function NotFoundComponent() {
   return (
@@ -169,7 +169,7 @@ function RootComponent() {
           </main>
           <Footer />
         </div>
-        <CookieConsent />
+        {/* <CookieConsent /> */}
       </CartProvider>
     </QueryClientProvider>
   );
